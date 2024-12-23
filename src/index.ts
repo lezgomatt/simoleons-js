@@ -1,2 +1,2 @@
-export { Currency } from "./currency";
-export { Money } from "./money";
+export { Currency } from "./currency.js";
+export { Money } from "./money.js";

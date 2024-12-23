@@ -1,6 +1,6 @@
 {
     "name": "simoleons",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A data type for monetary values",
     "keywords": [
         "currency",
@@ -10,8 +10,16 @@
     ],
     "author": "lezgomatt",
     "license": "Zlib",
-    "repository": "github:lezgomatt/simoleons-js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lezgomatt/simoleons-js.git"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "files": ["dist"],
     "scripts": {
+        "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
