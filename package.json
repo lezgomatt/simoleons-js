@@ -17,12 +17,22 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "module",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "tsc",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "tsc && ava"
     },
     "devDependencies": {
+        "@ava/typescript": "^5.0.0",
+        "ava": "^6.2.0",
         "typescript": "^5.7.2"
+    },
+    "ava": {
+        "typescript": {
+            "rewritePaths": { "src/": "dist/" },
+            "compile": false
+        }
     }
 }

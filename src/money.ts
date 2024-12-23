@@ -17,7 +17,11 @@ export class Money {
 
         let adjustment = currency.numDecimalPlaces - fractionPart.length;
         if (adjustment < 0) {
-            throw new Error(`Invalid amount: ${currency.code} ${amount}`);
+            if (/[^0]/.test(fractionPart.slice(currency.numDecimalPlaces))) {
+                throw new Error(`Invalid amount: ${currency.code} ${amount}`);
+            } else {
+                fractionPart = fractionPart.slice(0, currency.numDecimalPlaces);
+            }
         } else if (adjustment > 0) {
             fractionPart = fractionPart + "0".repeat(adjustment);
         }
